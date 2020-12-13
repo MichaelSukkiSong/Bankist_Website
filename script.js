@@ -211,7 +211,7 @@ const imgTargets = document.querySelectorAll('img[data-src]');
 
 const loadImg = function (entries, observer) {
   const [entry] = entries;
-  console.log(entry);
+  // console.log(entry);
 
   if (!entry.isIntersecting) return;
 
@@ -294,8 +294,8 @@ const slider = function () {
 
   const init = function () {
     goToSlide(0);
-    createDots();
 
+    createDots();
     activateDot(0);
   };
   init();
@@ -318,3 +318,18 @@ const slider = function () {
   });
 };
 slider();
+
+// Lifecycle DOM Events.
+document.addEventListener('DOMContentLoaded', function (e) {
+  console.log('HTML parsed and DOM tree built!', e);
+});
+
+window.addEventListener('load', function (e) {
+  console.log('Page fully loaded', e);
+});
+
+// window.addEventListener('beforeunload', function (e) {
+//   e.preventDefault();
+//   console.log(e);
+//   e.returnValue = '';
+// });
